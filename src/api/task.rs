@@ -69,3 +69,14 @@ pub async fn get_task(
         None => Err(TaskError::TaskNotFound),
     }
 }
+
+#[post("/task")]
+pub async fn submit_task(
+    ddb_repo: Data<DDBRepository>,
+    request: Json<SubmitTaskRequest>
+) -> Result<Json<TaskIdentifier>, TaskError> {
+    let task = Task::new (
+        request.user_id.clone(),
+        request.task_type.clone(),
+        request.source_file.clone(),
+    );
