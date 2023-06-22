@@ -2,8 +2,6 @@
 
 The typescript api I created previously was too slow. I am now creating the entire api from scracth in rust. The backend is the same i.e. dynamodb in aws.
 
-## WORK IN PROGRESS
-
 <!--
 
 ## Table of Contents
